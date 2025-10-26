@@ -14,3 +14,7 @@ theme = "ananke"
   name = "Categories"
   url = "/categories/"
   weight = 3
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
