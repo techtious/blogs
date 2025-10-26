@@ -1,8 +1,10 @@
 backend:
   name: github
   repo: techtious/blogs
-  branch: dev
+  branch: main
   auth_type: token
+
+publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
 collections:
@@ -11,8 +13,7 @@ collections:
     folder: 'content/blog'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    editor:
-      preview: false
+    publish: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
