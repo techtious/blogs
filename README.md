@@ -1,4 +1,4 @@
-# 🧠 Techtious — Tech Blogs for Modern Engineers
+# 🧠 Techtious — Tech Blogs 
 
 Welcome to **Techtious**, a modern tech blog built using **[Hugo](https://gohugo.io/)** and powered by **[Decap CMS](https://decapcms.org/)** for content management.  
 This site is designed to share insights, tutorials, and deep-dives on **DevOps**, **Cloud**, **SRE**, and **Software Engineering** — helping professionals grow and stay current with technology trends.
@@ -43,69 +43,13 @@ This site is designed to share insights, tutorials, and deep-dives on **DevOps**
 └── public/             # Generated static site output
 ```
 
----
+## 🤝 Contributing
 
-## 🖊️ Writing a New Blog Post
+We welcome contributions to the [Techtious Blog](https://blog.techtious.com)!
 
-You can add a new post in two ways:
+To learn how to add or edit blog posts using Decap CMS and GitHub, please read our  
+👉 [Contribution Guidelines](./CONTRIBUTING.md)
 
-### Option 1: Through Decap CMS
-1. Visit `/admin`
-2. Log in with your Git credentials
-3. Click **"New Post"**
-4. Write, preview, and publish directly to GitHub
-
-### Option 2: Using Hugo CLI
-```bash
-hugo new posts/my-new-blog.md
-```
-Edit the generated file under `content/posts/`, then commit and push your changes.
-
----
-
-## 🧾 Example Front Matter (YAML)
-
-```yaml
----
-title: "Optimizing AWS Costs with FinOps"
-date: 2025-10-25
-tags: ["AWS", "Cost Optimization", "FinOps"]
-categories: ["Cloud", "DevOps"]
-draft: false
----
-```
-
----
-
-## 🛠️ Development Setup
-
-```bash
-# Clone the repo
-git clone https://github.com/<your-username>/techtious.git
-cd techtious
-
-# Start Hugo local server
-hugo server -D
-```
-
-Then open 👉 [http://localhost:1313](http://localhost:1313)
-
----
-
-## 🌍 Deployment
-
-You can host the generated static site (`public/` directory) on:
-- GitHub Pages
-- Netlify
-- Cloudflare Pages
-- AWS S3 + CloudFront
-
-Build command:
-```bash
-hugo
-```
-
----
 
 ## 📧 Contact
 
@@ -115,10 +59,11 @@ For collaborations, guest posts, or feedback:
 
 ---
 
-## 🪪 License
+## 📄 License
 
-This project is licensed under the **MIT License** — feel free to use and adapt it.
+The source code and configuration files of this repository are **proprietary — all rights reserved**.  
+Blog content (articles, images, and media) is licensed under [Creative Commons Attribution-NoDerivatives 4.0](https://creativecommons.org/licenses/by-nd/4.0/).  
+
+For full details, see the [LICENSE](./LICENSE) file.
 
 ---
-
-### ⭐ If you find this project useful, give it a star on GitHub!
