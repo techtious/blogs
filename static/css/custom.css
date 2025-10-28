@@ -1,0 +1,48 @@
+
+.content-container {
+  max-width: 1000px;
+  margin: 0 auto; /* centers the container */
+  padding: 0 1rem; /* adds some space on the sides */
+}
+
+.main-content {
+  width: 100%;
+}
+
+.sidebar {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* Author box */
+.author-sidebar {
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.author-avatar {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .author-sidebar {
+    text-align: center;
+  }
+
+  .author-avatar {
+    width: 60px;
+    height: 60px;
+  }
+}
