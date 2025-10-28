@@ -1,0 +1,21 @@
+.page-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.site-sidebar {
+  border-left: 5px solid rgba(0,0,0,0.1);
+  padding-left: 4rem;
+}
+
+@media (max-width: 800px) {
+  .page-grid {
+    grid-template-columns: 1fr;
+  }
+  .site-sidebar {
+    border-left: none;
+    padding-left: 0;
+  }
+}

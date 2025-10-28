@@ -1,0 +1,21 @@
+{{/* layouts/partials/authors-sidebar.html */}}
+{{ $page := . }}
+{{ $authors := $page.Params.authors }}
+
+<div style="background: #f9f9f9; border: 1px solid #ccc; padding: 1rem; margin: 1rem;">
+
+  {{ if $authors }}
+    {{ if not (reflect.IsSlice $authors) }}
+      {{ $authors = slice $authors }}
+    {{ end }}
+
+    <h3>Authors</h3>
+    <ul>
+      {{ range $authors }}
+        <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p>No authors found</p>
+  {{ end }}
+</div>
