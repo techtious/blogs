@@ -3,6 +3,7 @@ title: "Mastering FinOps on AWS: Turning Cloud Costs into Business Value"
 date: 2025-10-27T10:10:00.000+04:00
 description: "Mastering FinOps on AWS: Turning Cloud Costs into Business Value"
 categories: AWS
+authors: "Rahul Lamba"
 ---
 
 

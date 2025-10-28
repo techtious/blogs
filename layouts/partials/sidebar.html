@@ -1,0 +1,54 @@
+{{/* layouts/partials/sidebar.html */}}
+<aside class="site-sidebar" role="complementary" aria-label="Archive by month">
+  <h3>Archive</h3>
+
+  {{ $pages := where .Site.RegularPages "Type" "post" }}
+  {{ if not (len $pages) }}
+    <p>No posts found.</p>
+  {{ else }}
+    {{- $scratch := newScratch -}}
+
+    {{/* Group posts by month */}}
+    {{ range $pages.ByDate.Reverse }}
+      {{ $ym := .Date.Format "2006-01" }}
+      {{ $key := printf "group-%s" $ym }}
+      {{ $group := $scratch.Get $key }}
+      {{ if $group }}
+        {{ $scratch.Set $key (append $group .) }}
+      {{ else }}
+        {{ $scratch.Set $key (slice .) }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Collect all unique months */}}
+    {{ $monthKeys := slice }}
+    {{ range $pages.ByDate.Reverse }}
+      {{ $ym := .Date.Format "2006-01" }}
+      {{ if not (in $monthKeys $ym) }}
+        {{ $monthKeys = $monthKeys | append $ym }}
+      {{ end }}
+    {{ end }}
+
+    <nav class="archive-months">
+      {{ range $monthKeys }}
+        {{ $ym := . }}
+        {{ $monthDate := time (print $ym "-01") }}
+        <section class="archive-month">
+          <h4 class="archive-month-heading">
+            {{ dateFormat "January 2006" $monthDate }}
+          </h4>
+          <ul>
+            {{ range ($scratch.Get (printf "group-%s" $ym)) }}
+              <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <small class="archive-post-date">
+                  {{ dateFormat "Jan 2" .Date }}
+                </small>
+              </li>
+            {{ end }}
+          </ul>
+        </section>
+      {{ end }}
+    </nav>
+  {{ end }}
+</aside>

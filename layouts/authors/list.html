@@ -1,0 +1,11 @@
+{{ define "main" }}
+<h1>Authors</h1>
+<ul class="author-list">
+  {{ range .Data.Terms.Alphabetical }}
+    <li class="author-item">
+      <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+      <span>({{ .Count }} posts)</span>
+    </li>
+  {{ end }}
+</ul>
+{{ end }}

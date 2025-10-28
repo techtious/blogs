@@ -3,6 +3,8 @@ title: "Cost Optimization on Azure: Strategies to Reduce Your Cloud Spend"
 date: 2025-10-26T17:09:00.000+04:00
 description: "Cost Optimization on Azure: Strategies to Reduce Your Cloud Spend"
 categories: Azure
+authors: 
+  - "Rahul Lamba"
 ---
 
 # Cost Optimization on Azure: Strategies to Reduce Your Cloud Spend
