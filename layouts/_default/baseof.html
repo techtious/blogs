@@ -32,6 +32,8 @@
     {{ end }}
 
     <link rel="canonical" href="{{ with .Params.canonicalUrl }}{{ . }}{{ else }}{{ .Permalink }}{{ end }}">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="978c9a4f-4c08-45df-ad1b-270af5a38a46"></script>
+
 
     {{- template "_internal/opengraph.html" . -}}
     {{- template "_internal/schema.html" . -}}
