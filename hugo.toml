@@ -1,4 +1,5 @@
-baseURL = 'https://blog.techtious.com/'
+baseURL = 'https://techtious.com/'
+
 languageCode = 'en-us'
 title = 'Techtious Blogs'
 theme = "ananke"
