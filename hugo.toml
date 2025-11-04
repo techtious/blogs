@@ -1,5 +1,4 @@
 baseURL = 'https://techtious.com/'
-
 languageCode = 'en-us'
 title = 'Techtious'
 theme = "ananke"
@@ -15,4 +14,5 @@ enableRobotsTXT = true
     dir = ':cacheDir/images'
 
 [params]
-  custom_css = ["css/custom.css"]   #
+  custom_css = ["css/custom.css"]
+  techtiousBaseURL = "https://techtious.com/"
