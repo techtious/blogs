@@ -39,8 +39,6 @@ Using a monitoring/observability platform like Datadog is great initially, but a
 
 ## Practical Tips for Cost Optimization
 
-For a stack like yours (DevOps, FastAPI, React, Kubernetes, Redis, Postgres), here’s how to optimize:
-
 ### 1. Review Agent Deployment
 
 * Avoid running an agent in every container; prefer host-level or node-level deployment.
@@ -76,7 +74,6 @@ For a stack like yours (DevOps, FastAPI, React, Kubernetes, Redis, Postgres), he
 
 * For a pre-revenue startup, uncontrolled monitoring costs can put unnecessary pressure on cash flow.
 * Dynamic container scaling in your stack makes costs unpredictable.
-* Your existing DevOps and cloud experience makes it easier to implement optimizations like rightsizing, filtering, and efficient agent placement.
 
 - - -
 
