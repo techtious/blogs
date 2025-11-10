@@ -20,7 +20,9 @@ description: "The Hidden Price of Intelligence: Why LLM Cost Visibility Matters
   More Than Ever"
 categories: AWS
 ---
-![LLM Cost Dashboard](/img/chatgpt-image-nov-10-2025-11_21_48-am.png "LLM Cost Dashboard")
+
+
+![LLM Cost Dashboard](/img/screenshot-2025-11-10-at-12.33.13 pm.png "LLM Cost Dashboard")
 
 # The Hidden Price of Intelligence: Why LLM Cost Visibility Matters More Than Ever
 
@@ -130,3 +132,5 @@ Here’s a simple architecture for visual LLM cost tracking:
       ↓
 [Alerts + Budget Thresholds]
 ```
+
+![]()
