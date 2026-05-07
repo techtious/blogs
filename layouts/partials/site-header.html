@@ -16,9 +16,6 @@
     <div class="bg-white">
       {{ partials.Include "site-navigation.html" . }}
     </div>
-    {{ if and .IsPage (ne .Layout "search") }}
-    <a href="{{ .CurrentSection.RelPermalink }}" class="back-link">All posts</a>
-    {{ end }}
   </header>
   {{ if and (not .IsHome) (ne .Layout "search") }}
   <div class="section-hero tc-l pv2 ph3 ph4-ns">

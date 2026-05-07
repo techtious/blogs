@@ -308,25 +308,22 @@ nav ul a:hover {
   gap: 0.4rem;
   font-size: 0.85rem;
   font-weight: 500;
-  color: #555;
+  color: #444;
   text-decoration: none;
-  padding: 0.5rem 1.5rem;
-  background: #fafafa;
-  border-top: 1px solid #e8e8e8;
+  padding: 0.45rem 1.5rem;
+  background: #f2f2f2;
+  border-bottom: 1px solid #e0e0e0;
+  position: fixed;
+  top: 61px;
+  left: 0;
+  right: 0;
+  z-index: 999;
   transition: color 0.15s, background 0.15s;
-}
-
-body.is-single {
-  padding-top: 109px;
 }
 
 .back-link:hover {
   color: #3b6af5;
-  background: #f0f4ff;
-}
-
-.back-link::before {
-  content: "←";
+  background: #e8eeff;
 }
 
 /* ── Author sidebar ── */
@@ -395,6 +392,11 @@ body > header {
 /* Push all content down to account for fixed navbar */
 body {
   padding-top: 64px;
+}
+
+/* Post pages have navbar + back bar, need extra offset */
+body.is-single {
+  padding-top: 103px;
 }
 
 /* ── Search icon in navbar ── */
