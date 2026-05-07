@@ -17,7 +17,7 @@
       {{ partials.Include "site-navigation.html" . }}
     </div>
   </header>
-  {{ if not .IsHome }}
+  {{ if and (not .IsHome) (ne .Layout "search") }}
   <div class="section-hero tc-l pv3 ph3 ph4-ns">
     <h1 class="f2 fw2 light-silver mb0 lh-title">{{ .Title | compare.Default .Site.Title }}</h1>
     {{ with .Params.description }}<h2 class="fw1 f5 measure-wide-l center lh-copy mt3 mb4 mid-gray">{{ . }}</h2>{{ end }}
