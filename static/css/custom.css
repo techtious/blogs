@@ -1,8 +1,24 @@
 /* ── Layout ── */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body > header {
+  flex-shrink: 0;
+}
+
 .content-container {
+  flex: 1;
   max-width: 860px;
   margin: 0 auto;
   padding: 0 1.5rem 3rem;
+  width: 100%;
 }
 
 .main-content {
