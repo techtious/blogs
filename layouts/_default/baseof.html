@@ -69,9 +69,6 @@
     <!-- Author sidebar below content -->
     {{ if .IsPage }}
         {{ partial "authors-sidebar.html" . }}
-        {{ if ne .Layout "search" }}
-        <a href="{{ .CurrentSection.RelPermalink }}" class="back-link back-link-bottom">← All posts</a>
-        {{ end }}
     {{ end }}
     </div>
 
