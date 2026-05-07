@@ -227,9 +227,32 @@ a.ba.b--moon-gray:hover {
   color: #888;
 }
 
-/* Override ananke's wrapper padding on list page */
-section.flex-ns.mt5 > div {
-  padding: 0.25rem;
+/* Post card grid */
+.post-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 60em) {
+  .post-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.post-grid > div {
+  display: flex;
+}
+
+.post-grid .post-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-grid .post-card-meta {
+  margin-top: auto;
 }
 
 /* ── Navigation ── */

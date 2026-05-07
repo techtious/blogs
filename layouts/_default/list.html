@@ -5,9 +5,9 @@
       {{- . -}}
     </section>
     {{ end }}
-    <section class="flex-ns flex-wrap justify-around">
+    <section class="post-grid">
       {{ range .Paginator.Pages }}
-        <div class="w-100 w-30-l mb4 relative bg-white">
+        <div>
           {{ .Render "summary" }}
         </div>
       {{ end }}
