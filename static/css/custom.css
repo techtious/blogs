@@ -412,6 +412,20 @@ body {
 }
 
 /* ── Search icon in navbar ── */
+.nav-back-link {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #555;
+  text-decoration: none;
+  margin-right: 1rem;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+
+.nav-back-link:hover {
+  color: #3b6af5;
+}
+
 .nav-search-btn {
   display: flex;
   align-items: center;
