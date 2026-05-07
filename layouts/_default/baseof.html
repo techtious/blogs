@@ -33,6 +33,16 @@
 
     <link rel="canonical" href="{{ with .Params.canonicalUrl }}{{ . }}{{ else }}{{ .Permalink }}{{ end }}">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="978c9a4f-4c08-45df-ad1b-270af5a38a46"></script>
+    {{ if .IsPage }}<script defer>
+      window.addEventListener('scroll', function() {
+        var el = document.getElementById('reading-progress');
+        if (!el) return;
+        var doc = document.documentElement;
+        var scrollTop = doc.scrollTop || document.body.scrollTop;
+        var scrollHeight = doc.scrollHeight - doc.clientHeight;
+        el.style.width = scrollHeight > 0 ? (scrollTop / scrollHeight * 100) + '%' : '0%';
+      });
+    </script>{{ end }}
 
 
     {{- template "_internal/opengraph.html" . -}}
@@ -44,11 +54,13 @@
 
   {{- $environment := hugo.Environment | compare.Default "production" -}}
   <body class="ma0 {{ $.Param "body_classes"  | compare.Default "avenir bg-near-white"}} {{ $environment }}">
+    {{ if .IsPage }}<div id="reading-progress"></div>{{ end }}
 
     {{ block "header" . }}
       {{ partials.Include "site-header.html" . }}
     {{ end }}
     <div class="content-container">
+    {{ if .IsPage }}<a href="{{ .CurrentSection.RelPermalink }}" class="back-link">All posts</a>{{ end }}
     <!-- Main content -->
     <main class="main-content" style="width: 100%;">
       {{ block "main" . }}{{ end }}
