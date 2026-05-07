@@ -59,8 +59,8 @@
     {{ block "header" . }}
       {{ partials.Include "site-header.html" . }}
     {{ end }}
+    {{ if and .IsPage (ne .Layout "search") }}<a href="{{ .CurrentSection.RelPermalink }}" class="back-link">← All posts</a>{{ end }}
     <div class="content-container">
-    {{ if and .IsPage (ne .Layout "search") }}<a href="{{ .CurrentSection.RelPermalink }}" class="back-link">All posts</a>{{ end }}
     <!-- Main content -->
     <main class="main-content" style="width: 100%;">
       {{ block "main" . }}{{ end }}
@@ -69,9 +69,6 @@
     <!-- Author sidebar below content -->
     {{ if .IsPage }}
         {{ partial "authors-sidebar.html" . }}
-        {{ if ne .Layout "search" }}
-        <a href="{{ .CurrentSection.RelPermalink }}" class="back-link back-link-bottom">← All posts</a>
-        {{ end }}
     {{ end }}
     </div>
 
