@@ -2,7 +2,7 @@
 <aside class="site-sidebar" role="complementary" aria-label="Archive by month">
   <h3>Archive</h3>
 
-  {{ $pages := where .Site.RegularPages "Type" "post" }}
+  {{ $pages := where .Site.RegularPages "Section" "in" (slice "blog" "posts") }}
   {{ if not (len $pages) }}
     <p>No posts found.</p>
   {{ else }}
