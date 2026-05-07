@@ -223,6 +223,18 @@ nav[role="navigation"] {
   border-bottom: 1px solid #e8e8e8;
 }
 
+/* Force flex row on all screen sizes — theme uses flex-l (large only) */
+nav[role="navigation"] > div {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav[role="navigation"] > div > div {
+  display: flex !important;
+  align-items: center;
+}
+
 nav a.f3 img {
   height: 36px;
   width: auto;
