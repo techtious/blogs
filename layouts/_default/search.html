@@ -1,0 +1,106 @@
+{{ define "main" }}
+<a href="/blog/" class="back-link">All posts</a>
+<div class="search-page">
+  <div class="search-hero">
+    <div class="search-input-wrap">
+      <svg class="search-input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        id="search-input"
+        class="search-input"
+        type="search"
+        placeholder="Search articles…"
+        autofocus
+        autocomplete="off"
+      />
+      <button id="search-clear" class="search-clear" aria-label="Clear" style="display:none">✕</button>
+    </div>
+  </div>
+
+  <div id="search-results" class="search-results"></div>
+  <div id="search-empty" class="search-empty" style="display:none">
+    <p>No results for <strong id="search-empty-query"></strong></p>
+    <p class="search-empty-hint">Try a different keyword or check the spelling.</p>
+  </div>
+  <div id="search-idle" class="search-idle">
+    <p>Start typing to search across all posts.</p>
+  </div>
+</div>
+
+<script>
+(async function() {
+  await import('/pagefind/pagefind.js').then(async (pf) => {
+    const pagefind = pf;
+    await pagefind.init();
+
+    const input    = document.getElementById('search-input');
+    const results  = document.getElementById('search-results');
+    const empty    = document.getElementById('search-empty');
+    const idle     = document.getElementById('search-idle');
+    const clearBtn = document.getElementById('search-clear');
+    const emptyQ   = document.getElementById('search-empty-query');
+
+    let debounce;
+
+    input.addEventListener('input', () => {
+      clearTimeout(debounce);
+      debounce = setTimeout(() => runSearch(input.value.trim()), 200);
+      clearBtn.style.display = input.value ? 'flex' : 'none';
+    });
+
+    clearBtn.addEventListener('click', () => {
+      input.value = '';
+      clearBtn.style.display = 'none';
+      results.innerHTML = '';
+      empty.style.display = 'none';
+      idle.style.display = '';
+      input.focus();
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('q')) {
+      input.value = params.get('q');
+      clearBtn.style.display = 'flex';
+      runSearch(params.get('q'));
+    }
+
+    async function runSearch(query) {
+      if (!query) {
+        results.innerHTML = '';
+        empty.style.display = 'none';
+        idle.style.display = '';
+        return;
+      }
+      idle.style.display = 'none';
+
+      const search = await pagefind.search(query);
+
+      if (!search.results.length) {
+        results.innerHTML = '';
+        emptyQ.textContent = query;
+        empty.style.display = '';
+        return;
+      }
+
+      empty.style.display = 'none';
+
+      const cards = await Promise.all(search.results.slice(0, 10).map(async (r) => {
+        const data = await r.data();
+        return `
+          <a href="${data.url}" class="search-result-card">
+            <div class="search-result-meta">${data.meta?.date ?? ''}</div>
+            <h2 class="search-result-title">${data.meta?.title ?? data.url}</h2>
+            <p class="search-result-excerpt">${data.excerpt}</p>
+          </a>`;
+      }));
+
+      results.innerHTML = cards.join('');
+    }
+  }).catch(() => {
+    document.getElementById('search-idle').innerHTML =
+      '<p class="search-idle-warn">Search index not available. Run <code>pagefind --site public</code> after building.</p>';
+  });
+})();
+</script>
+{{ end }}
