@@ -218,14 +218,9 @@ section.flex-ns.mt5 > div {
 
 /* ── Navigation ── */
 nav[role="navigation"] {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #fff;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid #e8e8e8;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 
 nav a.f3 img {
@@ -327,10 +322,20 @@ nav ul a:hover {
   }
 }
 
-/* Prevent header wrapper from blocking sticky nav */
-body > header,
-body > div > header {
-  position: relative;
+/* Fixed navbar on single post pages only */
+body.is-single > header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+
+/* Push content down to account for fixed navbar on post pages */
+body.is-single {
+  padding-top: 64px;
 }
 
 /* ── Footer ── */

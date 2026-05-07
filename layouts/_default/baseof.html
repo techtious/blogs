@@ -53,7 +53,7 @@
   </head>
 
   {{- $environment := hugo.Environment | compare.Default "production" -}}
-  <body class="ma0 {{ $.Param "body_classes"  | compare.Default "avenir bg-near-white"}} {{ $environment }}">
+  <body class="ma0 {{ $.Param "body_classes"  | compare.Default "avenir bg-near-white"}} {{ $environment }}{{ if .IsPage }} is-single{{ end }}">
     {{ if .IsPage }}<div id="reading-progress"></div>{{ end }}
 
     {{ block "header" . }}
