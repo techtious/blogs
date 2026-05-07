@@ -314,10 +314,16 @@ nav ul a:hover {
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #e8e8e8;
-  position: sticky;
+  position: fixed;
   top: 64px;
+  left: 0;
+  right: 0;
   z-index: 100;
   transition: color 0.15s, background 0.15s;
+}
+
+body.is-single {
+  padding-top: 109px;
 }
 
 .back-link:hover {
