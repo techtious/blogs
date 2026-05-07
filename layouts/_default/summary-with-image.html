@@ -1,11 +1,9 @@
-<div class="post-card">
+<a href="{{ .RelPermalink }}" class="post-card">
   {{ with .Params.categories }}<span class="post-card-category">{{ if reflect.IsSlice . }}{{ index . 0 }}{{ else }}{{ . }}{{ end }}</span>{{ end }}
-  <h2 class="post-card-title">
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-  </h2>
+  <h2 class="post-card-title">{{ .Title }}</h2>
   <p class="post-card-excerpt">{{ .Description | default (.Summary | plainify | truncate 120 "…") }}</p>
   <div class="post-card-meta">
     <time>{{ .Date | time.Format "Jan 2, 2006" }}</time>
     {{ if .ReadingTime }}<span>· {{ .ReadingTime }} min read</span>{{ end }}
   </div>
-</div>
+</a>

@@ -179,17 +179,22 @@ a.ba.b--moon-gray:hover {
 
 /* ── Post list cards ── */
 .post-card {
+  display: flex;
+  flex-direction: column;
   padding: 1.25rem 1.5rem;
   border-radius: 8px;
   border: 1px solid #e8e8e8;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition: box-shadow 0.25s, transform 0.25s;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .post-card:hover {
-  box-shadow: 0 4px 14px rgba(0,0,0,0.09);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  transform: translateY(-6px);
 }
 
 .post-card-category {
@@ -206,12 +211,7 @@ a.ba.b--moon-gray:hover {
   line-height: 1.35;
 }
 
-.post-card-title a {
-  color: #111;
-  text-decoration: none;
-}
-
-.post-card-title a:hover {
+.post-card:hover .post-card-title {
   color: #3b6af5;
 }
 
