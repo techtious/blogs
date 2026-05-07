@@ -321,6 +321,28 @@ nav ul a:hover {
   content: "←";
 }
 
+.back-link-bottom {
+  display: inline-flex;
+  margin: 2rem 0 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #3b6af5;
+  border: 1px solid #3b6af5;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.back-link-bottom::before {
+  content: none;
+}
+
+.back-link-bottom:hover {
+  background: #3b6af5;
+  color: #fff;
+}
+
 /* ── Author sidebar ── */
 .author-card {
   display: flex;
