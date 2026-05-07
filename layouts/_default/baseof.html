@@ -60,7 +60,7 @@
       {{ partials.Include "site-header.html" . }}
     {{ end }}
     <div class="content-container">
-    {{ if .IsPage }}<a href="{{ .CurrentSection.RelPermalink }}" class="back-link">All posts</a>{{ end }}
+    {{ if and .IsPage (ne .Layout "search") }}<a href="{{ .CurrentSection.RelPermalink }}" class="back-link">All posts</a>{{ end }}
     <!-- Main content -->
     <main class="main-content" style="width: 100%;">
       {{ block "main" . }}{{ end }}
