@@ -1,9 +1,11 @@
 # Stage 1: Build Hugo site
 FROM hugomods/hugo:debian-nightly AS builder
 
+RUN apt-get update && apt-get install -y nodejs npm && npm install -g pagefind
+
 WORKDIR /src
 COPY . .
-RUN hugo --minify
+RUN hugo --minify && pagefind --site public
 
 # Stage 2: Serve with Nginx
 FROM nginx:alpine

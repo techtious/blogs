@@ -338,6 +338,72 @@ body {
   padding-top: 64px;
 }
 
+/* ── Search icon in navbar ── */
+.nav-search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  color: #1C1C1E;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-search-btn:hover {
+  color: #3b6af5;
+}
+
+/* ── Search page ── */
+.search-page {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.search-page-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+/* Pagefind UI overrides */
+.pagefind-ui__search-input {
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  padding: 0.75rem 1rem !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05) !important;
+}
+
+.pagefind-ui__search-input:focus {
+  border-color: #3b6af5 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(59,106,245,0.15) !important;
+}
+
+.pagefind-ui__result {
+  border-bottom: 1px solid #f0f0f0 !important;
+  padding: 1.25rem 0 !important;
+}
+
+.pagefind-ui__result-title {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #111 !important;
+}
+
+.pagefind-ui__result-link {
+  color: #3b6af5 !important;
+  text-decoration: none !important;
+}
+
+.pagefind-ui__result-excerpt {
+  font-size: 0.875rem !important;
+  color: #555 !important;
+  line-height: 1.6 !important;
+}
+
 /* ── Footer ── */
 footer[role="contentinfo"] {
   font-size: 0.85rem;
