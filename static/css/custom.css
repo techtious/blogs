@@ -64,6 +64,30 @@ article strong {
   color: #111;
 }
 
+/* ── Images ── */
+article img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin: 1.75rem auto;
+}
+
+article p:has(img) {
+  margin: 0;
+}
+
+article img + em,
+article p:has(img) + p > em:only-child {
+  display: block;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #888;
+  margin-top: -1rem;
+  margin-bottom: 1.75rem;
+}
+
 /* ── Post header meta ── */
 article header .tracked {
   letter-spacing: 0.04em;
@@ -194,9 +218,14 @@ section.flex-ns.mt5 > div {
 
 /* ── Navigation ── */
 nav[role="navigation"] {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid #e8e8e8;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 
 nav a.f3 img {
@@ -296,6 +325,12 @@ nav ul a:hover {
     flex-direction: column;
     text-align: center;
   }
+}
+
+/* Prevent header wrapper from blocking sticky nav */
+body > header,
+body > div > header {
+  position: relative;
 }
 
 /* ── Footer ── */
