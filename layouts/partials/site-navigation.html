@@ -8,7 +8,6 @@
       {{ end }}
     </a>
     <div class="flex-l items-center">
-      {{ if and .IsPage (ne .Layout "search") }}<a href="{{ .CurrentSection.RelPermalink }}" class="nav-back-link">← All posts</a>{{ end }}
       {{ partials.Include "i18nlist.html" . }}
       {{ if .Site.Menus.main }}
         <ul class="{{ compare.Conditional (compare.Eq $.Site.Language.LanguageDirection "rtl") "pr0 ml3" "pl0 mr3" }}">
