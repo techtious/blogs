@@ -16,3 +16,6 @@ enableRobotsTXT = true
 [params]
   custom_css = ["css/custom.css"]
   techtiousBaseURL = "https://techtious.com/"
+  show_reading_time = true
+  site_logo = "Logo.svg"
+  background_color_class = "bg-white"
